@@ -1,16 +1,18 @@
 # Workday CNX Chat
 
-
 Projeto e ideias feitos originalmente por **fragass**.
 
-
 > Chat interno web com login, presença online e envio de imagens por Ctrl+V.
+
+Reestruturação da documentação realizada com base no código existente.
 
 ---
 
 ## Sumário
 
 - [Visão geral](#visão-geral)
+- [Objetivo do projeto](#objetivo-do-projeto)
+- [Custos (stack 100% sem pagamento obrigatório)](#custos-stack-100-sem-pagamento-obrigatório)
 - [Stack e arquitetura](#stack-e-arquitetura)
 - [Estrutura do repositório](#estrutura-do-repositório)
 - [Fluxos principais](#fluxos-principais)
@@ -20,6 +22,7 @@ Projeto e ideias feitos originalmente por **fragass**.
 - [Como rodar](#como-rodar)
 - [Segurança e limitações atuais](#segurança-e-limitações-atuais)
 - [Roadmap sugerido](#roadmap-sugerido)
+- [Créditos](#créditos)
 
 ---
 
@@ -34,6 +37,32 @@ Este projeto é uma aplicação de chat para uso interno com:
 - presença online,
 - upload de imagem por colagem (Ctrl+V),
 - notificações sonoras de novas mensagens/menções.
+
+---
+
+## Objetivo do projeto
+
+Criar um canal de conversa privado para um grupo específico de pessoas, com acesso controlado e interface discreta, sem depender de plataformas externas de chat tradicionais.
+
+---
+
+## Custos (stack 100% sem pagamento obrigatório)
+
+Este sistema foi pensado para funcionar **sem contratar plano pago**.
+
+### O que foi usado sem custo obrigatório
+
+- **Front-end estático** (HTML/CSS/JS): sem custo de licença.
+- **Node.js + npm**: ecossistema open source.
+- **Dependências do projeto**:
+  - `@supabase/supabase-js` (open source)
+  - `formidable` (open source)
+- **Supabase**: pode operar no plano gratuito para este caso de uso.
+- **Deploy serverless (ex.: Vercel)**: pode operar no plano gratuito (hobby).
+
+### Observação importante
+
+Não existe cobrança obrigatória no código para ele funcionar. O projeto pode rodar no modo gratuito enquanto estiver dentro dos limites de uso dos provedores (quota de requests, storage, bandwidth e execução serverless).
 
 ---
 
@@ -274,3 +303,5 @@ vercel dev
 - Renomear arquivo principal do chat para nome semântico.
 
 ---
+
+**fragass**.
