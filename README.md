@@ -1,4 +1,4 @@
-# Workday CNX Chat
+# Chat Privado
 
 Aplicação web de chat interno com autenticação simples, mensagens em tempo quase real (polling), presença online e upload de imagens por **Ctrl+V**, usando front-end puro (HTML/CSS/JS) e funções serverless integradas ao Supabase.
 
