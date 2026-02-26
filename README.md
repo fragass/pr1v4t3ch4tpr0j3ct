@@ -1,10 +1,8 @@
 # Workday CNX Chat
 
-**Créditos:** projeto original por **fragass**.
+Projeto e ideias feito originalmente por **fragass**.
 
 > Chat interno web com login, presença online e envio de imagens por Ctrl+V.
-
-Reestruturação da documentação realizada com base no código existente.
 
 ---
 
@@ -20,7 +18,6 @@ Reestruturação da documentação realizada com base no código existente.
 - [Como rodar](#como-rodar)
 - [Segurança e limitações atuais](#segurança-e-limitações-atuais)
 - [Roadmap sugerido](#roadmap-sugerido)
-- [Créditos](#créditos)
 
 ---
 
@@ -275,7 +272,3 @@ vercel dev
 - Renomear arquivo principal do chat para nome semântico.
 
 ---
-
-## Créditos
-
-Projeto original por **fragass**.
