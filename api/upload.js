@@ -1,19 +1,19 @@
-import { createClient } from "@supabase/supabase-js";
-import formidable from "formidable";
-import fs from "fs";
+const { createClient } = require("@supabase/supabase-js");
+const formidable = require("formidable");
+const fs = require("fs");
 
-export const config = {
+module.exports.config = {
   api: {
-    bodyParser: false, // necessário para receber FormData
+    bodyParser: false,
   },
 };
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_ROLE_KEY // use a SERVICE ROLE KEY aqui
+  process.env.SUPABASE_SERVICE_ROLE_KEY
 );
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
@@ -22,23 +22,29 @@ export default async function handler(req, res) {
 
   form.parse(req, async (err, fields, files) => {
     if (err) {
+      console.error("Erro ao processar form:", err);
       return res.status(500).json({ error: "Erro ao processar upload" });
     }
 
     try {
+      if (!files.file) {
+        return res.status(400).json({ error: "Nenhum arquivo enviado" });
+      }
+
       const file = files.file;
-      const fileName = fields.fileName;
+      const fileName = fields.fileName || `${Date.now()}-${file.originalFilename}`;
 
       const fileData = fs.readFileSync(file.filepath);
 
       const { error } = await supabase.storage
-        .from("chat-images") // nome do bucket
+        .from("chat-images")
         .upload(fileName, fileData, {
           contentType: file.mimetype,
           upsert: false,
         });
 
       if (error) {
+        console.error("Erro no upload Supabase:", error);
         return res.status(500).json({ error: error.message });
       }
 
@@ -49,7 +55,8 @@ export default async function handler(req, res) {
       return res.status(200).json({ url: data.publicUrl });
 
     } catch (e) {
-      return res.status(500).json({ error: "Erro no upload" });
+      console.error("Erro interno:", e);
+      return res.status(500).json({ error: "Erro interno no upload" });
     }
   });
-}
+};
