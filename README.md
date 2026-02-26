@@ -20,7 +20,6 @@ Projeto e ideias feitos originalmente por **fragass**.
 - [Como rodar](#como-rodar)
 - [Segurança e limitações atuais](#segurança-e-limitações-atuais)
 - [Roadmap sugerido](#roadmap-sugerido)
-- [Créditos](#créditos)
 
 ---
 
