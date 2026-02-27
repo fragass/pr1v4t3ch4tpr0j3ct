@@ -223,16 +223,21 @@ button.send-btn:hover {
 }
 
 #dropdown-menu button {
-    background: #ff4d4d;
-    color: #fff;
+    background: #111111; /* mesmo preto do botão Enviar */
+    color: #ffffff;
     border: none;
     border-radius: 8px;
     padding: 6px 12px;
     cursor: pointer;
     font-size: 14px;
     width: 100%;
+    transition: background 0.2s, transform 0.1s;
 }
-#dropdown-menu button:hover { background: #e60000; }
+
+#dropdown-menu button:hover {
+    background: #000000; /* hover igual ao Enviar */
+    transform: translateY(-1px);
+}
 
 .online-header { display: flex; align-items: center; gap: 8px; }
 .online-dot {
@@ -551,6 +556,7 @@ async function sendMessage() {
 </script>
 </body>
 </html>
+
 
 
 
