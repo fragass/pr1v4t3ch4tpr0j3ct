@@ -15,23 +15,20 @@
 
 html { 
     scrollbar-width: thin; 
-    scrollbar-color: #3a3d46 #1a1c21; 
+    scrollbar-color: #2c2f36 #0b0f14; 
 }
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #1a1c21; }
-::-webkit-scrollbar-thumb { background: #3a3d46; border-radius: 6px; }
-::-webkit-scrollbar-thumb:hover { background: #50555f; }
+::-webkit-scrollbar-track { background: #0b0f14; }
+::-webkit-scrollbar-thumb { background: #2c2f36; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3d46; }
 
-.messages::-webkit-scrollbar { width: 8px; }
-.messages::-webkit-scrollbar-track { background: #1b1d22; }
-.messages::-webkit-scrollbar-thumb { background: #3a3d46; border-radius: 6px; }
-.messages::-webkit-scrollbar-thumb:hover { background: #50555f; }
+.messages::-webkit-scrollbar-track { background: #10151c; }
 
 body {
     margin: 0;
-    background: #1a1c21;
-    font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
-    color: #e0e2e6;
+    background: #0b0f14;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: #e6edf3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,13 +40,13 @@ body {
     position: fixed;
     top: 10px;
     left: 10px;
-    background: #23252c;
-    border: 1px solid #3a3d46;
+    background: #151a21;
+    border: 1px solid rgba(255,255,255,.08);
     padding: 8px 12px;
     border-radius: 10px;
     font-size: 12px;
-    color: #c0c3c8;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    color: #b8bcc4;
+    box-shadow: 0 6px 18px rgba(0,0,0,.5);
     z-index: 1000;
 }
 
@@ -58,24 +55,23 @@ body {
     max-width: 100%;
     height: 700px;
     max-height: 90vh;
-    background: #23252c;
-    border-radius: 12px;
-    border: 1px solid #3a3d46;
+    background: #151a21;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,.08);
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    box-shadow: 0 25px 60px rgba(0,0,0,.7);
 }
 
 .header {
     padding: 16px;
     font-size: 15px;
     font-weight: 600;
-    border-bottom: 1px solid #3a3d46;
+    border-bottom: 1px solid rgba(255,255,255,.08);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #e0e2e6;
 }
 
 .warning-text { color: #ffffff; }
@@ -83,28 +79,32 @@ body {
 .admin-link {
     text-decoration: none;
     font-size: 14px;
-    opacity: 0.75;
-    transition: all 0.2s ease;
+    color: #b8bcc4;
+    opacity: .8;
+    transition: all .2s ease;
 }
-.admin-link:hover { opacity: 1; transform: scale(1.05); }
+.admin-link:hover { opacity: 1; }
 
 .messages {
     flex: 1;
     padding: 16px;
     overflow-y: auto;
-    background: #1f2126;
+    background: #10151c;
 }
 
 .message {
     padding: 12px 14px;
     border-radius: 10px;
     margin-bottom: 10px;
-    background: #2b2d33;
-    border: 1px solid #3a3d46;
+    background: #151a21;
+    border: 1px solid rgba(255,255,255,.08);
     font-size: 13px;
-    transition: background 0.2s ease, transform 0.15s ease;
+    transition: background .2s ease, transform .15s ease;
 }
-.message:hover { background: #35383f; transform: translateY(-1px); }
+.message:hover {
+    background: #1b2028;
+    transform: translateY(-1px);
+}
 
 .message-header {
     display: flex;
@@ -113,11 +113,11 @@ body {
 }
 
 .username { font-weight: 600; color: #ffffff; }
-.timestamp { font-size: 11px; color: #a5a9b0; }
+.timestamp { font-size: 11px; color: #8b949e; }
 
 .form {
     padding: 14px;
-    border-top: 1px solid #3a3d46;
+    border-top: 1px solid rgba(255,255,255,.08);
     display: flex;
     gap: 8px;
     align-items: center;
@@ -130,41 +130,38 @@ textarea {
     height: 45px;
     padding: 10px;
     border-radius: 10px;
-    border: 1px solid #3a3d46;
-    background: #2b2d33;
-    color: #e0e2e6;
+    border: 1px solid rgba(255,255,255,.08);
+    background: #10151c;
+    color: #e6edf3;
     font-size: 13px;
     outline: none;
-    transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 textarea:focus {
     border-color: #ffffff;
-    box-shadow: 0 0 8px rgba(255,255,255,0.3);
+    box-shadow: 0 0 0 2px rgba(255,255,255,.12);
 }
 
 button.send-btn {
     padding: 0 18px;
     height: 45px;
     border-radius: 10px;
-    border: none;
-    background: #23252c;
+    border: 1px solid rgba(255,255,255,.12);
+    background: #10151c;
     color: #ffffff;
-    font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all .2s ease;
 }
 button.send-btn:hover {
-    background: #2b2d33;
-    transform: translateY(-1px);
+    background: #151a21;
+    box-shadow: 0 0 12px rgba(255,255,255,.12);
 }
 
 .emoji-toggle {
     cursor: pointer;
     font-size: 20px;
-    opacity: 0.75;
-    transition: all 0.2s ease;
+    opacity: .75;
 }
-.emoji-toggle:hover { opacity: 1; transform: scale(1.15); }
+.emoji-toggle:hover { opacity: 1; }
 
 .emoji-panel {
     position: absolute;
@@ -173,8 +170,8 @@ button.send-btn:hover {
     width: 260px;
     max-height: 200px;
     overflow-y: auto;
-    background: #23252c;
-    border: 1px solid #3a3d46;
+    background: #151a21;
+    border: 1px solid rgba(255,255,255,.08);
     border-radius: 12px;
     padding: 12px;
     display: none;
@@ -182,7 +179,39 @@ button.send-btn:hover {
     gap: 6px;
 }
 
+#mini-profile {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(21,26,33,.95);
+    color: #ffffff;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.5);
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+}
+
+#dropdown-menu {
+    background: rgba(21,26,33,.98);
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.6);
+}
+
+#dropdown-menu button {
+    background: #10151c;
+    color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.12);
+}
+#dropdown-menu button:hover {
+    background: #151a21;
+}
+
 .online-header { display: flex; align-items: center; gap: 8px; }
+
 .online-dot {
     width: 10px;
     height: 10px;
@@ -191,23 +220,32 @@ button.send-btn:hover {
     animation: pulse 1.5s infinite;
 }
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.7); }
+    0% { box-shadow: 0 0 0 0 rgba(255,255,255,.5); }
     70% { box-shadow: 0 0 0 8px rgba(255,255,255,0); }
     100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
 }
 
-.mention { color: #ffffff; font-weight: 600; }
-.mention-self { color: #ffffff; font-weight: 700; }
-
-.message.whisper {
-    background: #2b2d33;
-    border: 1px solid #ffffff;
+.mention,
+.mention-self {
     color: #ffffff;
+    font-weight: 600;
 }
 
-.overlay.success { background: #ffffff; color: #000; }
-.overlay.error { background: #da3633; }
-.overlay.info { background: #2c2c2c; }
+.message.whisper {
+    background: #10151c;
+    border: 1px dashed rgba(255,255,255,.2);
+    font-style: italic;
+}
+
+.overlay {
+    background: rgba(0,0,0,.85);
+    color: #ffffff;
+}
+.overlay.success,
+.overlay.error,
+.overlay.info {
+    background: rgba(0,0,0,.85);
+}
 </style>
 </head>
 <body>
@@ -540,6 +578,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
